@@ -47,7 +47,7 @@ export function Streams() {
             ctaLabel="SEGUIR →"
             kicker="WATCH-ALONGS · ALTERNATIVO"
             description="Streams largos sin restricciones — clasificaciones y carreras enteras en directo."
-
+            badge={null}
             preview={<KickPreview />}
             delay={2}
           />
