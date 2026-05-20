@@ -114,15 +114,7 @@ function VideoThumb({ v, small = false }: { v: FZVideo; small?: boolean }) {
         src={v.thumb}
         alt={v.title}
         style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform .5s cubic-bezier(.2,.7,.3,1)' }}
-        onError={(e) => {
-          const img = e.currentTarget as HTMLImageElement;
-          // maxresdefault doesn't exist for all videos → fall back to hqdefault
-          if (img.src.includes('maxresdefault')) {
-            img.src = img.src.replace('maxresdefault', 'hqdefault');
-          } else {
-            img.style.display = 'none';
-          }
-        }}
+        onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
       />
     );
   }
@@ -153,7 +145,6 @@ function PlayArc() {
       transform: 'translate(-50%,-50%)',
       width: 70, height: 70, background: 'var(--fz-red)', color: '#fff',
       display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2,
-      clipPath: 'polygon(0 0, 100% 0, calc(100% - 14px) 100%, 0 100%)',
     }}>
       <svg width="20" height="20" viewBox="0 0 18 18" fill="currentColor"><path d="M4 3l11 6-11 6V3z"/></svg>
     </div>

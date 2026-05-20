@@ -83,7 +83,7 @@ async function main() {
     videos.push({
       id,
       title,
-      thumb: `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`,
+      thumb: `https://i.ytimg.com/vi/${id}/hqdefault.jpg`,
       views,
       age,
       tag: guessTag(title),

@@ -6,7 +6,7 @@ const CACHE_KEY  = 'fz-yt-v3';
 const CACHE_TTL  = 30 * 60 * 1000; // 30 min
 
 export function ytThumb(id: string) {
-  return `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
+  return `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
 }
 
 interface CacheEntry { ts: number; videos: FZVideo[] }
