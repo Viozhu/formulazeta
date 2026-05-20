@@ -15,19 +15,26 @@ export function Members() {
         </div>
 
         <div className="fz-reveal" style={{
-          display: 'flex', alignItems: 'baseline', justifyContent: 'space-between',
-          marginBottom: 56, gap: 40,
+          display: 'flex', alignItems: 'center', gap: 40, marginBottom: 28,
         }}>
-          <h2 className="fz-h2">
+          <h2 className="fz-h2" style={{ flexShrink: 0 }}>
             APOYÁ EL CANAL.<br />
             <span style={{ color: 'var(--fz-red)' }}>SUMATE.</span>
           </h2>
-          <p style={{ fontSize: 18, lineHeight: 1.5, maxWidth: 480, color: 'rgba(244,241,235,0.85)' }}>
-            La mejor forma de apoyar el trabajo del canal es sumándote a la comunidad de
-            <strong style={{ color: 'var(--fz-text)' }}> MIEMBROS</strong> en YouTube.
-            Los tres niveles acceden a los mismos beneficios — con sumarte ya alcanza.
-          </p>
+          <div style={{ flex: 1, borderRadius: 4, overflow: 'hidden', lineHeight: 0 }}>
+            <img
+              src="/socios-banner.jpg"
+              alt="Socios del canal Formula Zeta"
+              style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
+            />
+          </div>
         </div>
+
+        <p className="fz-reveal" style={{ fontSize: 18, lineHeight: 1.5, color: 'rgba(244,241,235,0.85)', marginBottom: 40 }}>
+          La mejor forma de apoyar el trabajo del canal es sumándote a la comunidad de
+          <strong style={{ color: 'var(--fz-text)' }}> MIEMBROS</strong> en YouTube.
+          Los tres niveles acceden a los mismos beneficios — con sumarte ya alcanza.
+        </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 18 }}>
           {FZ_MEMBER_PERKS.map((p, i) => (
