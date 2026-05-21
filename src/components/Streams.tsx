@@ -107,19 +107,16 @@ function StreamCard({
           </div>
         )}
       </div>
-      <div style={{ padding: 28 }}>
+      <div className="fz-stream-card-body">
         <div className="fz-mono" style={{
           fontSize: 10, color: 'var(--fz-muted)',
           letterSpacing: '0.22em', marginBottom: 12,
         }}>{kicker}</div>
         <div className="fz-display" style={{ fontSize: 'clamp(32px, 5vw, 56px)', lineHeight: 0.92 }}>{handle}</div>
-        <p style={{ fontSize: 14, lineHeight: 1.55, color: 'rgba(244,241,235,0.75)', marginTop: 16, marginBottom: 24 }}>
+        <p style={{ fontSize: 14, lineHeight: 1.55, color: 'rgba(244,241,235,0.75)', marginTop: 16, marginBottom: 0 }}>
           {description}
         </p>
-        <div style={{
-          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-          paddingTop: 18, borderTop: '1px solid var(--fz-line)',
-        }}>
+        <div className="fz-stream-card-footer">
           <span className="fz-mono" style={{ fontSize: 11, color: 'var(--fz-muted)' }}>{url}</span>
           <span className="fz-mono" style={{ fontSize: 12, color: accentColor, letterSpacing: '0.22em' }}>{ctaLabel}</span>
         </div>

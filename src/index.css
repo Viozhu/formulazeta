@@ -155,9 +155,14 @@ img { display: block; max-width: 100%; }
 /* ====================================================================
    STREAMS — mobile defaults
    ==================================================================== */
-.fz-grid-2          { display: grid; grid-template-columns: 1fr; gap: 16px; }
-.fz-streams-header  { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 36px; }
-.fz-stream-hero     { height: 140px; }
+.fz-grid-2             { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.fz-streams-header     { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 36px; }
+.fz-stream-hero        { height: 140px; }
+.fz-stream-card-body   { padding: 20px; }
+.fz-stream-card-footer {
+  display: flex; flex-direction: column; gap: 12px;
+  padding-top: 16px; border-top: 1px solid var(--fz-line); margin-top: 20px;
+}
 
 /* ====================================================================
    FANTASY — mobile defaults
@@ -166,6 +171,9 @@ img { display: block; max-width: 100%; }
 .fz-fantasy-code-value { font-size: 22px; letter-spacing: 0.1em; }
 .fz-fantasy-stats      { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .fz-fantasy-stat-num   { font-size: 26px; }
+.fz-fantasy-stripe     { left: -260px; }
+.fz-fantasy-btns       { display: flex; flex-direction: column; gap: 10px; margin-top: 36px; }
+.fz-fantasy-btns .fz-btn { width: 100%; justify-content: center; }
 
 /* ====================================================================
    MEMBERS — mobile defaults
@@ -254,14 +262,19 @@ img { display: block; max-width: 100%; }
   .fz-video-lg-meta   { flex-direction: row; justify-content: space-between; align-items: flex-start; }
 
   /* Streams */
-  .fz-grid-2          { grid-template-columns: 1fr 1fr; gap: 22px; }
-  .fz-streams-header  { flex-direction: row; align-items: baseline; justify-content: space-between; gap: 40px; margin-bottom: 56px; }
-  .fz-stream-hero     { height: 220px; }
+  .fz-grid-2             { grid-template-columns: 1fr 1fr; gap: 22px; }
+  .fz-streams-header     { flex-direction: row; align-items: baseline; justify-content: space-between; gap: 40px; margin-bottom: 56px; }
+  .fz-stream-hero        { height: 220px; }
+  .fz-stream-card-body   { padding: 28px; }
+  .fz-stream-card-footer { flex-direction: row; justify-content: space-between; align-items: center; gap: 0; margin-top: 24px; }
 
   /* Fantasy */
   .fz-grid-fantasy       { grid-template-columns: 1.1fr 0.9fr; gap: 80px; }
   .fz-fantasy-code-value { font-size: 38px; }
   .fz-fantasy-stat-num   { font-size: 36px; }
+  .fz-fantasy-stripe     { left: -180px; }
+  .fz-fantasy-btns       { flex-direction: row; flex-wrap: wrap; gap: 12px; }
+  .fz-fantasy-btns .fz-btn { width: auto; justify-content: flex-start; }
 
   /* Members */
   .fz-grid-3          { grid-template-columns: repeat(3, 1fr); gap: 18px; }

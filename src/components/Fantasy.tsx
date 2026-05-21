@@ -24,8 +24,8 @@ export function Fantasy() {
       borderTop: '1px solid var(--fz-line)',
       borderBottom: '1px solid var(--fz-line)',
     }}>
-      <div className="fz-stripe" style={{
-        position: 'absolute', left: -180, top: 60,
+      <div className="fz-stripe fz-fantasy-stripe" style={{
+        position: 'absolute', top: 60,
         width: 520, height: 520, opacity: 0.32, transform: 'rotate(8deg)',
       }} />
       <div className="fz-container" style={{ position: 'relative', zIndex: 2 }}>
@@ -54,7 +54,7 @@ export function Fantasy() {
               a la fábrica en Inglaterra para el ganador.
             </p>
 
-            <div style={{ marginTop: 36, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+            <div className="fz-fantasy-btns">
               <a href={FZ_LINKS.fantasy} className="fz-btn fz-btn-primary fz-btn-lg">CREAR MI EQUIPO →</a>
               <a href={FZ_LINKS.youtube} className="fz-btn fz-btn-ghost fz-btn-lg">VER TUTORIAL</a>
             </div>
