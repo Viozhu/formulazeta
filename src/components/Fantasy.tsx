@@ -98,10 +98,10 @@ export function Fantasy() {
                 </div>
               </div>
 
-              <div style={{
-                marginTop: 28, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
-                gap: 16, paddingTop: 24, borderTop: '1px solid var(--fz-line)',
-              }}>
+              <div
+                className="fz-fantasy-stats"
+                style={{ marginTop: 28, paddingTop: 24, borderTop: '1px solid var(--fz-line)' }}
+              >
                 {STATS.map(([n, l]) => (
                   <div key={l}>
                     <div className="fz-display fz-tnum fz-fantasy-stat-num">{n}</div>

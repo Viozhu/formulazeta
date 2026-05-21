@@ -36,9 +36,11 @@ export function Videos() {
           </>
         )}
 
-        <a href={FZ_LINKS.youtube} className="fz-videos-cta fz-mono fz-reveal">
-          VER TODOS LOS VIDEOS →
-        </a>
+        {!loading && (
+          <a href={FZ_LINKS.youtube} className="fz-videos-cta fz-mono fz-reveal">
+            VER TODOS LOS VIDEOS →
+          </a>
+        )}
       </div>
     </section>
   );
