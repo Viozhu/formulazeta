@@ -3,7 +3,7 @@ import { FZ_LINKS } from '../data';
 
 export function Streams() {
   return (
-    <section id="en-vivo" style={{ paddingTop: 100, paddingBottom: 100 }}>
+    <section id="en-vivo" style={{ paddingTop: 56, paddingBottom: 56 }}>
       <div className="fz-container">
         <div className="fz-secthead fz-reveal" style={{ marginBottom: 28 }}>
           <span className="fz-secthead-num">02</span>
@@ -11,10 +11,7 @@ export function Streams() {
           <span className="fz-secthead-rule" />
         </div>
 
-        <div className="fz-reveal" style={{
-          display: 'flex', alignItems: 'baseline', justifyContent: 'space-between',
-          marginBottom: 56, gap: 40,
-        }}>
+        <div className="fz-streams-header fz-reveal">
           <h2 className="fz-h2">
             REACCIONES<br />EN <span style={{ color: 'var(--fz-red)' }}>DIRECTO.</span>
           </h2>
@@ -24,7 +21,7 @@ export function Streams() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 22 }}>
+        <div className="fz-grid-2">
           <StreamCard
             href={FZ_LINKS.youtube}
             platform="YOUTUBE"
@@ -92,7 +89,7 @@ function StreamCard({
         e.currentTarget.style.transform = '';
       }}
     >
-      <div style={{ height: 220, position: 'relative', overflow: 'hidden' }}>
+      <div className="fz-stream-hero" style={{ position: 'relative', overflow: 'hidden' }}>
         {preview}
         <div style={{ position: 'absolute', top: 18, left: 18 }}>
           <span className="fz-mono" style={{
@@ -115,7 +112,7 @@ function StreamCard({
           fontSize: 10, color: 'var(--fz-muted)',
           letterSpacing: '0.22em', marginBottom: 12,
         }}>{kicker}</div>
-        <div className="fz-display" style={{ fontSize: 56, lineHeight: 0.92 }}>{handle}</div>
+        <div className="fz-display" style={{ fontSize: 'clamp(32px, 5vw, 56px)', lineHeight: 0.92 }}>{handle}</div>
         <p style={{ fontSize: 14, lineHeight: 1.55, color: 'rgba(244,241,235,0.75)', marginTop: 16, marginBottom: 24 }}>
           {description}
         </p>
