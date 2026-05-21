@@ -19,7 +19,7 @@ export function Fantasy() {
 
   return (
     <section id="fantasy" style={{
-      paddingTop: 100, paddingBottom: 100, position: 'relative', overflow: 'hidden',
+      paddingTop: 56, paddingBottom: 56, position: 'relative', overflow: 'hidden',
       background: 'var(--fz-surface)',
       borderTop: '1px solid var(--fz-line)',
       borderBottom: '1px solid var(--fz-line)',
@@ -36,7 +36,7 @@ export function Fantasy() {
           <span className="fz-mono" style={{ color: 'var(--fz-muted)' }}>GRATIS</span>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 80, alignItems: 'start' }}>
+        <div className="fz-grid-fantasy">
           <div className="fz-reveal">
             <h2 className="fz-h2">
               ARMÁ TU EQUIPO.<br />
@@ -67,25 +67,25 @@ export function Fantasy() {
                 fontSize: 10, color: 'var(--fz-red)',
                 letterSpacing: '0.32em', marginTop: 8,
               }}>● LIGA OFICIAL DE FORMULA ZETA</div>
-              <div className="fz-display" style={{ fontSize: 48, lineHeight: 0.92, marginTop: 18 }}>
+              <div className="fz-display" style={{ fontSize: 'clamp(28px, 5vw, 48px)', lineHeight: 0.92, marginTop: 18 }}>
                 SUMATE CON<br />EL CÓDIGO:
               </div>
 
               <div style={{ marginTop: 32, position: 'relative' }}>
                 <div style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 16,
-                  padding: '18px 26px', background: 'var(--fz-bg)',
-                  border: '2px dashed var(--fz-red)',
-                  fontFamily: '"JetBrains Mono", monospace', fontSize: 38,
-                  letterSpacing: '0.12em', color: 'var(--fz-text)', position: 'relative',
-                }}>
+                display: 'flex', alignItems: 'center', gap: 16,
+                padding: '16px 18px', background: 'var(--fz-bg)',
+                border: '2px dashed var(--fz-red)',
+                letterSpacing: '0.12em', color: 'var(--fz-text)', position: 'relative',
+                justifyContent: 'space-between', width: '100%', boxSizing: 'border-box',
+              }}>
                   <span style={{
                     position: 'absolute', top: -10, left: 18,
                     background: 'var(--fz-bg)', padding: '2px 8px',
                     fontFamily: '"JetBrains Mono", monospace', fontSize: 10,
                     color: 'var(--fz-red)', letterSpacing: '0.22em',
                   }}>CÓDIGO</span>
-                  <span>{FZ_FANTASY_CODE}</span>
+                  <span className="fz-mono fz-fantasy-code-value">{FZ_FANTASY_CODE}</span>
                   <button
                     onClick={copyCode}
                     className="fz-mono"
@@ -104,7 +104,7 @@ export function Fantasy() {
               }}>
                 {STATS.map(([n, l]) => (
                   <div key={l}>
-                    <div className="fz-display fz-tnum" style={{ fontSize: 36 }}>{n}</div>
+                    <div className="fz-display fz-tnum fz-fantasy-stat-num">{n}</div>
                     <div className="fz-mono" style={{
                       fontSize: 9, color: 'var(--fz-muted)',
                       letterSpacing: '0.22em', marginTop: 4,
