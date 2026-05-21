@@ -116,7 +116,7 @@ export function Hero({ countdown, race, raceLoading }: HeroProps) {
                   <a
                     href={FZ_LINKS.youtube}
                     className="fz-btn fz-btn-primary"
-                    style={{ marginTop: 16, width: '100%', justifyContent: 'center', fontSize: 10 }}
+                    style={{ marginTop: 16, width: '100%', justifyContent: 'center' }}
                   >COBERTURA EN EL CANAL</a>
                 </>
               )}
