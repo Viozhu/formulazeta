@@ -142,7 +142,7 @@ export function Nav() {
             href={FZ_LINKS.youtubeJoin}
             onClick={close}
             className="fz-btn fz-btn-primary"
-            style={{ marginTop: 24, justifyContent: 'center' }}
+            style={{ marginTop: 24, justifyContent: 'center', width: '100%' }}
           >
             SER SOCIO →
           </a>
