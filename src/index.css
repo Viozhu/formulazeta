@@ -1,21 +1,17 @@
 /* Formula Zeta — base styles + design tokens */
 
 :root {
-  /* Surfaces */
   --fz-bg:        #0a0908;
   --fz-surface:   #131110;
   --fz-surface-2: #1c1916;
 
-  /* Lines */
   --fz-line:   rgba(255, 255, 255, 0.08);
   --fz-line-2: rgba(255, 255, 255, 0.14);
 
-  /* Text */
   --fz-text:    #f4f1eb;
   --fz-muted:   #8a847a;
   --fz-muted-2: #5a544c;
 
-  /* Accent — change this single var to retheme the whole site */
   --fz-red:   #d9382c;
   --fz-red-2: #ff5247;
 }
@@ -44,27 +40,27 @@ img { display: block; max-width: 100%; }
 .fz-ucase   { text-transform: uppercase; letter-spacing: 0.16em; }
 .fz-tnum    { font-variant-numeric: tabular-nums; }
 
-/* Layout */
-.fz-container { max-width: 1320px; margin: 0 auto; padding: 0 48px; }
+/* Layout — mobile default: 20px padding */
+.fz-container { max-width: 1320px; margin: 0 auto; padding: 0 20px; }
 
-/* Section head */
+/* Section head — mobile default */
 .fz-secthead {
-  display: flex; align-items: center; gap: 18px;
+  display: flex; align-items: center; gap: 10px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 12px; text-transform: uppercase; letter-spacing: 0.22em;
+  font-size: 9px; text-transform: uppercase; letter-spacing: 0.18em;
 }
 .fz-secthead-num {
-  width: 36px; height: 36px;
+  width: 28px; height: 28px;
   display: flex; align-items: center; justify-content: center;
-  background: var(--fz-red); color: #fff; font-weight: 600;
+  background: var(--fz-red); color: #fff; font-weight: 600; font-size: 10px;
 }
 .fz-secthead-rule { flex: 1; height: 1px; background: var(--fz-line-2); }
 
-/* Type scale */
-.fz-h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(120px, 12vw, 240px); line-height: 0.84; letter-spacing: 0; }
-.fz-h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(72px, 8vw, 132px); line-height: 0.88; }
-.fz-h3 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px, 5vw, 72px); line-height: 0.92; }
-.fz-h4 { font-family: 'Bebas Neue', sans-serif; font-size: 40px; line-height: 1; }
+/* Type scale — mobile defaults */
+.fz-h1 { font-family: 'Bebas Neue', sans-serif; font-size: 96px;  line-height: 0.84; letter-spacing: 0; }
+.fz-h2 { font-family: 'Bebas Neue', sans-serif; font-size: 64px;  line-height: 0.88; }
+.fz-h3 { font-family: 'Bebas Neue', sans-serif; font-size: 40px;  line-height: 0.92; }
+.fz-h4 { font-family: 'Bebas Neue', sans-serif; font-size: 28px;  line-height: 1; }
 
 /* Buttons */
 .fz-btn {
@@ -83,11 +79,7 @@ img { display: block; max-width: 100%; }
 .fz-btn-lg { padding: 22px 32px; font-size: 14px; }
 
 /* Cards */
-.fz-card {
-  background: var(--fz-surface);
-  border: 1px solid var(--fz-line);
-  transition: border-color .25s, transform .25s;
-}
+.fz-card { background: var(--fz-surface); border: 1px solid var(--fz-line); transition: border-color .25s, transform .25s; }
 .fz-card-hover:hover { border-color: var(--fz-red); }
 
 /* Decorative patterns */
@@ -97,9 +89,7 @@ img { display: block; max-width: 100%; }
     linear-gradient(-45deg, rgba(255, 255, 255, 0.06) 25%, transparent 25%);
   background-size: 14px 14px;
 }
-.fz-stripe {
-  background: repeating-linear-gradient(-78deg, var(--fz-red) 0 12px, transparent 12px 24px);
-}
+.fz-stripe { background: repeating-linear-gradient(-78deg, var(--fz-red) 0 12px, transparent 12px 24px); }
 
 /* Tag pill */
 .fz-tag {
@@ -110,27 +100,186 @@ img { display: block; max-width: 100%; }
 }
 .fz-tag-primary { background: var(--fz-red); }
 
-/* Stencil stroke for big text */
+/* Stencil stroke */
 .fz-stroke { -webkit-text-stroke: 1.5px var(--fz-text); color: transparent; }
 
 /* Reveal on scroll */
-.fz-reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity .9s cubic-bezier(.2, .7, .3, 1),
-              transform .9s cubic-bezier(.2, .7, .3, 1);
-}
+.fz-reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s cubic-bezier(.2,.7,.3,1), transform .9s cubic-bezier(.2,.7,.3,1); }
 .fz-reveal.fz-in { opacity: 1; transform: none; }
 .fz-reveal-d1 { transition-delay: .08s; }
 .fz-reveal-d2 { transition-delay: .16s; }
 .fz-reveal-d3 { transition-delay: .24s; }
 .fz-reveal-d4 { transition-delay: .32s; }
 
-/* Marquee / ticker */
-@keyframes fzTick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* Marquee */
+@keyframes fzTick  { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @keyframes fzPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.4); } }
 
-/* Responsive — collapse desktop grid below 980px */
-@media (max-width: 980px) {
-  .fz-container { padding: 0 24px; }
+/* ====================================================================
+   TICKER — mobile default
+   ==================================================================== */
+.fz-ticker       { height: 30px; }
+.fz-ticker-track { font-size: 10px; animation: fzTick 40s linear infinite; }
+
+/* ====================================================================
+   NAV — mobile default
+   ==================================================================== */
+.fz-nav-bar          { height: 60px; }
+.fz-nav-hamburger    { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 44px; height: 44px; flex-shrink: 0; cursor: pointer; border: 1px solid var(--fz-line); padding: 0; }
+.fz-nav-hamburger span { display: block; width: 20px; height: 1.5px; background: var(--fz-text); transition: transform .2s, opacity .2s; }
+.fz-nav-desktop-items { display: none; }
+.fz-nav-desktop-cta  { display: none; }
+
+/* ====================================================================
+   HERO — mobile defaults
+   ==================================================================== */
+.fz-hero-grid  { display: grid; grid-template-columns: 1fr; gap: 36px; margin-top: 32px; align-items: start; }
+.fz-hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 36px; }
+.fz-hero-body      { font-size: 16px; line-height: 1.45; }
+.fz-hero-stat-num  { font-size: 26px; }
+.fz-countdown-city  { font-size: 44px; line-height: 0.9; }
+.fz-countdown-digit { font-size: 32px; }
+
+/* ====================================================================
+   VIDEOS — mobile defaults
+   ==================================================================== */
+.fz-videos-lg       { display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 16px; }
+.fz-videos-sm       { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.fz-video-thumb-lg  { height: 200px; }
+.fz-video-thumb-sm  { height: 100px; }
+.fz-video-title-lg  { font-size: 24px; line-height: 1; }
+.fz-video-title-sm  { font-size: 16px; line-height: 1; }
+.fz-video-lg-meta   { display: flex; flex-direction: column; gap: 8px; padding: 14px 2px 2px; }
+.fz-videos-cta      { display: block; margin-top: 24px; padding: 14px; border: 1px solid var(--fz-line-2); font-family: 'JetBrains Mono', monospace; font-size: 11px; text-align: center; letter-spacing: 0.2em; text-transform: uppercase; }
+
+/* ====================================================================
+   STREAMS — mobile defaults
+   ==================================================================== */
+.fz-grid-2          { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.fz-streams-header  { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 36px; }
+.fz-stream-hero     { height: 140px; }
+
+/* ====================================================================
+   FANTASY — mobile defaults
+   ==================================================================== */
+.fz-grid-fantasy       { display: grid; grid-template-columns: 1fr; gap: 32px; align-items: start; }
+.fz-fantasy-code-value { font-size: 22px; letter-spacing: 0.1em; }
+.fz-fantasy-stats      { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.fz-fantasy-stat-num   { font-size: 26px; }
+
+/* ====================================================================
+   MEMBERS — mobile defaults
+   ==================================================================== */
+.fz-grid-3          { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.fz-members-header  { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; margin-bottom: 28px; }
+.fz-members-cta     { display: flex; flex-direction: column; align-items: stretch; gap: 24px; }
+.fz-members-cta .fz-btn { width: 100%; justify-content: center; }
+.fz-perk-number     { font-family: 'Bebas Neue', sans-serif; font-size: 60px; line-height: 0.85; color: var(--fz-red); }
+.fz-perk-card       { padding: 24px 22px; }
+
+/* ====================================================================
+   DISCORD — mobile defaults
+   ==================================================================== */
+.fz-grid-discord    { display: grid; grid-template-columns: 1fr; gap: 32px; align-items: start; }
+.fz-discord-cta     { width: 100%; justify-content: center; }
+
+/* ====================================================================
+   CTA — mobile defaults
+   ==================================================================== */
+.fz-cta-btns { display: flex; flex-direction: column; gap: 10px; margin-top: 28px; }
+.fz-cta-btns .fz-btn { width: 100%; justify-content: center; }
+
+/* ====================================================================
+   FOOTER — mobile defaults
+   ==================================================================== */
+.fz-footer-grid   { display: grid; grid-template-columns: 1fr; gap: 28px; margin-bottom: 40px; }
+.fz-footer-bottom { display: flex; flex-direction: column; gap: 8px; }
+
+/* ====================================================================
+   TABLET  min-width: 768px
+   ==================================================================== */
+@media (min-width: 768px) {
+  .fz-container { padding: 0 32px; }
+
+  .fz-videos-lg     { grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+  .fz-video-thumb-lg { height: 280px; }
+
+  .fz-grid-3        { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .fz-footer-grid   { grid-template-columns: 1fr 1fr; gap: 32px; }
+
+  .fz-hero-grid     { gap: 48px; margin-top: 48px; }
+}
+
+/* ====================================================================
+   DESKTOP  min-width: 1024px
+   ==================================================================== */
+@media (min-width: 1024px) {
+  .fz-container { padding: 0 48px; }
+
+  /* Section head */
+  .fz-secthead     { font-size: 12px; letter-spacing: 0.22em; gap: 18px; }
+  .fz-secthead-num { width: 36px; height: 36px; font-size: inherit; }
+
+  /* Type scale */
+  .fz-h1 { font-size: clamp(52px, 14vw, 240px); }
+  .fz-h2 { font-size: clamp(38px,  8vw, 132px); }
+  .fz-h3 { font-size: clamp(30px,  5vw,  72px); }
+  .fz-h4 { font-size: clamp(26px,  4vw,  40px); }
+
+  /* Ticker */
+  .fz-ticker       { height: 36px; }
+  .fz-ticker-track { font-size: 12px; animation-duration: 50s; }
+
+  /* Nav */
+  .fz-nav-bar          { height: 78px; }
+  .fz-nav-hamburger    { display: none; }
+  .fz-nav-desktop-items { display: flex; gap: 6px; margin-left: auto; }
+  .fz-nav-desktop-cta  { display: inline-flex; }
+
+  /* Hero */
+  .fz-hero-grid  { grid-template-columns: 1fr 480px; gap: 80px; margin-top: 64px; }
+  .fz-hero-stats { grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 72px; }
+  .fz-hero-body      { font-size: 22px; }
+  .fz-hero-stat-num  { font-size: 44px; }
+  .fz-countdown-city  { font-size: 64px; }
+  .fz-countdown-digit { font-size: 48px; }
+
+  /* Videos */
+  .fz-videos-lg       { grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+  .fz-videos-sm       { grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .fz-video-thumb-lg  { height: 360px; }
+  .fz-video-thumb-sm  { height: 170px; }
+  .fz-video-title-lg  { font-size: 36px; }
+  .fz-video-title-sm  { font-size: 24px; }
+  .fz-video-lg-meta   { flex-direction: row; justify-content: space-between; align-items: flex-start; }
+
+  /* Streams */
+  .fz-grid-2          { grid-template-columns: 1fr 1fr; gap: 22px; }
+  .fz-streams-header  { flex-direction: row; align-items: baseline; justify-content: space-between; gap: 40px; margin-bottom: 56px; }
+  .fz-stream-hero     { height: 220px; }
+
+  /* Fantasy */
+  .fz-grid-fantasy       { grid-template-columns: 1.1fr 0.9fr; gap: 80px; }
+  .fz-fantasy-code-value { font-size: 38px; }
+  .fz-fantasy-stat-num   { font-size: 36px; }
+
+  /* Members */
+  .fz-grid-3          { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .fz-members-header  { flex-direction: row; align-items: center; gap: 40px; }
+  .fz-members-cta     { flex-direction: row; align-items: center; justify-content: space-between; }
+  .fz-members-cta .fz-btn { width: auto; }
+  .fz-perk-number     { font-size: 88px; }
+  .fz-perk-card       { padding: 36px 32px; }
+
+  /* Discord */
+  .fz-grid-discord    { grid-template-columns: 1.2fr 0.8fr; gap: 80px; }
+  .fz-discord-cta     { width: auto; }
+
+  /* CTA */
+  .fz-cta-btns { flex-direction: row; flex-wrap: wrap; justify-content: center; margin-top: 48px; }
+  .fz-cta-btns .fz-btn { width: auto; }
+
+  /* Footer */
+  .fz-footer-grid   { grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 56px; }
+  .fz-footer-bottom { flex-direction: row; justify-content: space-between; }
 }
