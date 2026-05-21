@@ -4,7 +4,7 @@ import { FZ_DISCORD_CHANNELS, FZ_LINKS } from '../data';
 export function Discord() {
   return (
     <section id="discord" style={{
-      paddingTop: 100, paddingBottom: 100,
+      paddingTop: 56, paddingBottom: 56,
       background: 'var(--fz-surface)',
       borderTop: '1px solid var(--fz-line)',
       borderBottom: '1px solid var(--fz-line)',
@@ -17,7 +17,7 @@ export function Discord() {
           <span className="fz-mono" style={{ color: 'var(--fz-muted)' }}>8.4K MIEMBROS</span>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 80, alignItems: 'center' }}>
+        <div className="fz-grid-discord">
           <div className="fz-reveal">
             <h2 className="fz-h2">
               ¿VISTE UN<br />
@@ -32,10 +32,10 @@ export function Discord() {
               para los próximos videos.
             </p>
 
-            <div style={{ marginTop: 36, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+            <div style={{ marginTop: 36 }}>
               <a
                 href={FZ_LINKS.discord}
-                className="fz-btn fz-btn-lg"
+                className="fz-btn fz-btn-lg fz-discord-cta"
                 style={{ background: '#5865F2', color: '#fff' }}
               >UNIRME AL SERVIDOR →</a>
             </div>
@@ -47,7 +47,7 @@ export function Discord() {
               fontSize: 10, color: '#5865F2',
               letterSpacing: '0.32em', marginTop: 6,
             }}>● DISCORD.GG/QBNGBWZQK</div>
-            <div className="fz-display" style={{ fontSize: 64, marginTop: 12, lineHeight: 0.9 }}>
+            <div className="fz-display" style={{ fontSize: 'clamp(36px, 7vw, 64px)', marginTop: 12, lineHeight: 0.9 }}>
               FORMULA<br />ZETA
             </div>
 

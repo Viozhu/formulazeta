@@ -31,15 +31,12 @@ const COLUMNS: [string, [string, string][]][] = [
 export function Footer() {
   return (
     <footer style={{ background: 'var(--fz-surface)', borderTop: '1px solid var(--fz-line)' }}>
-      <div className="fz-container" style={{ paddingTop: 64, paddingBottom: 32 }}>
-        <div style={{
-          display: 'grid', gridTemplateColumns: '1.6fr 1fr 1fr 1fr',
-          gap: 40, marginBottom: 56,
-        }}>
+      <div className="fz-container" style={{ paddingTop: 36, paddingBottom: 24 }}>
+        <div className="fz-footer-grid">
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-              <img src="/logo.png" alt="" style={{ width: 36, height: 36 }} />
-              <span className="fz-display" style={{ fontSize: 32, letterSpacing: '0.03em' }}>
+              <img src="/logo.png" alt="" style={{ width: 30, height: 30 }} />
+              <span className="fz-display" style={{ fontSize: 22, letterSpacing: '0.03em' }}>
                 FORMULA ZETA
               </span>
             </div>
@@ -102,15 +99,13 @@ export function Footer() {
         </div>
 
         <div
-          className="fz-mono fz-ucase"
+          className="fz-footer-bottom fz-mono fz-ucase"
           style={{
             borderTop: '1px solid var(--fz-line)', paddingTop: 24,
-            display: 'flex', justifyContent: 'space-between',
             fontSize: 11, color: 'var(--fz-muted)',
           }}
         >
-          <span>© 2026 FORMULA ZETA · TODOS LOS DERECHOS RESERVADOS</span>
-          <span>HECHO POR FANS, PARA FANS</span>
+          <span>© 2026 FORMULA ZETA · HECHO POR FANS, PARA FANS</span>
         </div>
       </div>
     </footer>
