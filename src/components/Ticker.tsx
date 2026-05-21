@@ -12,7 +12,7 @@ export function Ticker({ countdown, race, raceLoading }: TickerProps) {
   const round = String(race.round).padStart(2, '0');
   const raceItem = raceLoading
     ? null
-    : `R${round} ${race.city} · ${pad2(countdown.d)}D ${pad2(countdown.h)}H ${pad2(countdown.m)}M`;
+    : `R${round} ${race.city} · ${pad2(countdown.d)}D ${pad2(countdown.h)}H`;
   const items = [
     'NUEVO VIDEO: ANÁLISIS DEL FIN DE SEMANA',
     'EN VIVO PRONTO EN KICK · KICK.COM/FORMULAZETA',
@@ -21,18 +21,22 @@ export function Ticker({ countdown, race, raceLoading }: TickerProps) {
     'SUMATE A LA COMUNIDAD DE DISCORD',
   ];
   return (
-    <div style={{
-      background: 'var(--fz-red)', color: '#fff', overflow: 'hidden',
-      height: 36, display: 'flex', alignItems: 'center',
-      borderBottom: '1px solid rgba(0,0,0,0.2)',
-    }}>
-      <div style={{
-        display: 'flex', gap: 56,
-        animation: 'fzTick 50s linear infinite',
-        willChange: 'transform', whiteSpace: 'nowrap',
-        fontFamily: '"JetBrains Mono", monospace', fontSize: 12,
-        letterSpacing: '0.12em', textTransform: 'uppercase',
-      }}>
+    <div
+      className="fz-ticker"
+      style={{
+        background: 'var(--fz-red)', color: '#fff', overflow: 'hidden',
+        display: 'flex', alignItems: 'center',
+        borderBottom: '1px solid rgba(0,0,0,0.2)',
+      }}
+    >
+      <div
+        className="fz-ticker-track fz-mono fz-ucase"
+        style={{
+          display: 'flex', gap: 56,
+          willChange: 'transform', whiteSpace: 'nowrap',
+          letterSpacing: '0.12em',
+        }}
+      >
         {[...items, ...items, ...items, ...items].map((t, i) => (
           <span key={i}>
             ■ {t}
