@@ -58,7 +58,7 @@ img { display: block; max-width: 100%; }
 
 /* Type scale — mobile defaults */
 .fz-h1 { font-family: 'Bebas Neue', sans-serif; font-size: 96px;  line-height: 0.84; letter-spacing: 0; }
-.fz-h2 { font-family: 'Bebas Neue', sans-serif; font-size: 64px;  line-height: 0.88; }
+.fz-h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 13.5vw, 64px); line-height: 0.88; }
 .fz-h3 { font-family: 'Bebas Neue', sans-serif; font-size: 40px;  line-height: 0.92; }
 .fz-h4 { font-family: 'Bebas Neue', sans-serif; font-size: 28px;  line-height: 1; }
 
@@ -168,6 +168,7 @@ img { display: block; max-width: 100%; }
    FANTASY — mobile defaults
    ==================================================================== */
 .fz-grid-fantasy       { display: grid; grid-template-columns: 1fr; gap: 32px; align-items: start; }
+.fz-grid-fantasy > *   { min-width: 0; }
 .fz-fantasy-code-value { font-size: 22px; letter-spacing: 0.1em; }
 .fz-fantasy-stats      { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .fz-fantasy-stat-num   { font-size: 26px; }
