@@ -20,6 +20,14 @@ export function Nav() {
     return () => { document.body.style.overflow = ''; };
   }, [open]);
 
+  // Close overlay on Escape key
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') close(); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [open]);
+
   const close = () => setOpen(false);
 
   return (
@@ -95,19 +103,24 @@ export function Nav() {
 
       {/* ── Mobile fullscreen overlay ── */}
       {open && (
-        <div style={{
-          position: 'fixed', inset: 0, zIndex: 40,
-          background: 'rgba(10,9,8,0.96)',
-          backdropFilter: 'blur(8px)',
-          WebkitBackdropFilter: 'blur(8px)',
-          display: 'flex', flexDirection: 'column',
-          padding: '80px 28px 40px',
-          gap: 0,
-          overflowY: 'auto',
-        }}>
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menú de navegación"
+          style={{
+            position: 'fixed', inset: 0, zIndex: 40,
+            background: 'rgba(10,9,8,0.96)',
+            backdropFilter: 'blur(8px)',
+            WebkitBackdropFilter: 'blur(8px)',
+            display: 'flex', flexDirection: 'column',
+            padding: '80px 28px 40px',
+            gap: 0,
+            overflowY: 'auto',
+          }}>
           {/* Close button */}
           <button
             onClick={close}
+            aria-label="Cerrar menú"
             className="fz-mono"
             style={{
               position: 'absolute', top: 18, right: 20,
